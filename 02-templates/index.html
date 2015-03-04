@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+
+        <!-- View
+             Container onde o template será renderizado.
+        -->
+        <div id="formulario-container"></div>
+        
+        <!-- Template -->
+        <script type="text/template" id="formulario-template">
+          <label>Pesquisar</label>
+          <input type="text" id="txtTermo" />
+          <input type="button" id="btnBuscar" value="Buscar" />
+        </script>
+        
+        <!-- dependências -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+        <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+
+        <!-- código -->
+        <script type="text/javascript">
+            
+            var PesquisaView = Backbone.View.extend({
+                // Este é o elemento que servirá de container
+                // para exibirmos o template
+                el: $("#formulario-container"),
+                initialize: function(){
+                    this.render();
+                },
+                render: function(){
+
+                    // Recuperamos o template através da jQuery e
+                    // passamos o resultado para a função `_.template` da Underscore
+                    this.template = _.template( $("#formulario-template").html(), {} );
+
+                    // Renderizando o HTML
+                    this.$el.html( this.template );
+                }
+            });
+            var pesquisa_view = new PesquisaView();
+            
+        </script>
+
+    </body>
+</html>
