@@ -12,7 +12,7 @@ console.log(JSON.stringify(colecao));
 /*
 
 	"[{"id":1,"firstName":"john","lastName":"Lennon"},
-      {"id":2,"firstName":"paul","lastName":"McCartney"},
+          {"id":2,"firstName":"paul","lastName":"McCartney"},
 	  {"id":3,"firstName":"george","lastName":"Harrison"},
 	  {"id":4,"firstName":"ringo","lastName":"Starr"}]"
 

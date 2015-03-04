@@ -1,6 +1,13 @@
-CRUD
+Sincronizando models com o servidor
 ===
 
+A partir deste modelo...
+
+```javascript
+Person = Backbone.Model.extend({
+    urlRoot: 'person/'
+});
+```
 
 ### Read - fetch()
 
@@ -9,22 +16,20 @@ var p1 = new Person({id: 1});
 
 p1.fetch({
     success: function (modeloResposta) {
-        console.log("OK");
-        // estamos exibindo o retorno da requisição
-        console.log(modeloResposta.get('name'));
+        console.log("OK", modeloResposta);
     },
     error: function (model, xhr, options) {
         console.log("Erro");
     }
 });
-```javascript
+```
 
     url: http://localhost/person/1
     method: GET
 
 
-
 ### Create - save()
+
 ```javascript
 var p1 = new Person({name: 'flavio'});
 
@@ -37,7 +42,6 @@ p1.save({}, {
 
     url:    http://localhost/person/
     method: POST
-
 
 
 ### Update - save()
