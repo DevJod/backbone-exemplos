@@ -1,4 +1,3 @@
-
 // classe
 var ViewExemplo = Backbone.View.extend({});
 
